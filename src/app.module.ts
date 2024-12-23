@@ -9,7 +9,7 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
     isGlobal: true,
     cache: true,
     // load: [config],
-  })
+  }), 
   ],
   controllers: [],
   providers: [],
