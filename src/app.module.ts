@@ -13,8 +13,8 @@ import { MongooseModule } from '@nestjs/mongoose';
     cache: true,
     // load: [config],
   }), 
-  MongooseModule.forRoot('mongodb+srv://marcinmierzwa81:9dnhY8LHu2pCzcDB@quotes.qdnlb.mongodb.net/?retryWrites=true&w=majority&appName=Quotes'), 
-  , UserModule,
+  MongooseModule.forRoot('mongodb+srv://marcinmierzwa81:9dnhY8LHu2pCzcDB@quotes.qdnlb.mongodb.net/?retryWrites=true&w=majority&appName=Quotes')
+  ,UserModule
   ],
   controllers: [],
   providers: [],
