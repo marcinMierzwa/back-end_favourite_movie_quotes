@@ -3,6 +3,6 @@ export default () => ({
     //   secret: `${process.env.JWT_SECRET_KEY}`,
     // },
     database: {
-      connnectionString: `${process.env.MONGO_URI}`,
+      connnectionString: `${process.env.DATASOURE_MONGO_URL}`,
     },
   });
