@@ -5,6 +5,7 @@ import { UsersModule } from './DOMAIN/users/users.module';
 import { QuotesModule } from './DOMAIN/quotes/quotes.module';
 import { DatabaseModule } from './DATABASE/database.module';
 import dbconfig from './DATABASE/config/dbconfig';
+import { MoviesModule } from './DOMAIN/movies/movies.module';
 
 @Module({
   imports: [
@@ -19,6 +20,7 @@ import dbconfig from './DATABASE/config/dbconfig';
     UsersModule,
     QuotesModule,
     DatabaseModule,
+    MoviesModule,
   ],
   controllers: [],
   providers: [],
