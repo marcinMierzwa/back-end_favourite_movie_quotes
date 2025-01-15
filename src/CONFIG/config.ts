@@ -6,6 +6,6 @@ export default () => ({
       }
     },
     database: {
-      connnectionString: `${process.env.DATASOURE_MONGO_URL}`,
+      connnectionString: `${process.env.DATASOURCE_MONGO_LOCALHOST_URL}`,
     },
   });

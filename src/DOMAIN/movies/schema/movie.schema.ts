@@ -1,9 +1,12 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import mongoose, { Document } from 'mongoose';
 
-@Schema()
+@Schema({
+    versionKey: false,
+    timestamps: true
+})
 export class Movie extends Document {
-  @Prop({ required: true })
+  @Prop()
   name: string;
   @Prop()
   runtimeInMinutes: number;
