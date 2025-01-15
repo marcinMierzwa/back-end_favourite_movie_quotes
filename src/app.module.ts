@@ -6,6 +6,7 @@ import { QuotesModule } from './DOMAIN/quotes/quotes.module';
 import { DatabaseModule } from './DATABASE/database.module';
 import dbconfig from './DATABASE/config/dbconfig';
 import { MoviesModule } from './DOMAIN/movies/movies.module';
+import { CharactersModule } from './DOMAIN/characters/characters.module';
 
 @Module({
   imports: [
@@ -21,6 +22,7 @@ import { MoviesModule } from './DOMAIN/movies/movies.module';
     QuotesModule,
     DatabaseModule,
     MoviesModule,
+    CharactersModule
   ],
   controllers: [],
   providers: [],

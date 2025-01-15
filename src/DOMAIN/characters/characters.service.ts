@@ -15,7 +15,7 @@ export class CharactersService {
     const createdCharater = await this.characterModel.create(createCharacterDto);
     return {
       createdCharater,
-      message: 'character created succesful'
+      message: 'character created succesfully'
     }
   }
 
@@ -34,4 +34,7 @@ export class CharactersService {
   remove(id: number) {
     return `This action removes a #${id} character`;
   }
+
+
+
 }

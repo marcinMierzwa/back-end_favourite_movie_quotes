@@ -18,9 +18,10 @@ export class QuotesController {
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.quotesService.findOne(+id);
+  findOneById(@Param('id') id: string) {
+    return this.quotesService.findOneById(id);
   }
+
 
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateQuoteDto: UpdateQuoteDto) {
@@ -31,4 +32,5 @@ export class QuotesController {
   remove(@Param('id') id: string) {
     return this.quotesService.remove(+id);
   }
+
 }
