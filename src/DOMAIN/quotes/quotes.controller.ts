@@ -1,7 +1,8 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, Query } from '@nestjs/common';
 import { QuotesService } from './quotes.service';
 import { CreateQuoteDto } from './dto/create-quote.dto';
 import { UpdateQuoteDto } from './dto/update-quote.dto';
+import { PaginationDto } from 'src/DTO/pagination.dto';
 
 @Controller('quotes')
 export class QuotesController {
@@ -13,13 +14,13 @@ export class QuotesController {
   }
 
   @Get()
-  findAll() {
-    return this.quotesService.findAll();
+  findAll(@Query() paginationDto: PaginationDto) {
+    return this.quotesService.findAll(paginationDto);
   }
 
   @Get(':id')
-  findOneById(@Param('id') id: string) {
-    return this.quotesService.findOneById(id);
+   findOneById(@Param('id') id: string) {
+     return  this.quotesService.findOneById(id);
   }
 
 
