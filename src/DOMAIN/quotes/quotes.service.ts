@@ -22,7 +22,7 @@ export class QuotesService {
       data: quotes,
       message: 'success',
       status: HttpStatus.OK,
-      pageIndex: Math.floor(skip / limit) + 1,
+      pageIndex: skip,
       pageSize: limit,
       totalItems: total,
     };
@@ -38,5 +38,12 @@ export class QuotesService {
 
   remove(id: number) {
     return `This action removes a #${id} quote`;
+  }
+  async createMany(createQuoteDtos: CreateQuoteDto[]) {
+    const createQuotes = await this.quoteModel.insertMany(createQuoteDtos);
+    return{
+      createQuotes,
+      length: createQuotes.length
+    }
   }
 }

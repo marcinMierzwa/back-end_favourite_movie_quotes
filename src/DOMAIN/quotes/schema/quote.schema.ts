@@ -17,6 +17,13 @@ export class Quote extends Document {
     @Prop()
     character: string
 
+    @Prop()
+    movieId: string
+
+    @Prop()
+    characterId: string
+
+
     @Prop({ type: [{ type: Types.ObjectId, ref: 'User' }], default: [] })
     likes: Types.ObjectId[];
 }

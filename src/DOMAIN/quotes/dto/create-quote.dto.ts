@@ -11,6 +11,13 @@ export class CreateQuoteDto {
   @IsString()
   character: string;
 
+  @IsString()
+  movieId: string;
+
+  @IsString()
+  characterId: string;
+
+
   @IsOptional()
   @IsArray()
   @IsMongoId({ each: true })
