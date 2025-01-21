@@ -5,6 +5,7 @@ import { InjectModel } from '@nestjs/mongoose';
 import { Quote } from './schema/quote.schema';
 import { Model } from 'mongoose';
 import { PaginationDto } from 'src/DTO/pagination.dto';
+import { DEFAULT_PAGE_SIZE } from 'src/UTIL/common.constans';
 
 @Injectable()
 export class QuotesService {
@@ -15,15 +16,16 @@ export class QuotesService {
   }
 
   async findAll(paginationDto: PaginationDto) {
-    const { skip, limit } = paginationDto;
+    const limit = paginationDto.limit;
+    const skip = paginationDto.skip * limit;
     const quotes = await this.quoteModel.find().skip(skip).limit(limit);
     const total = await this.quoteModel.countDocuments();
     return {
       data: quotes,
       message: 'success',
       status: HttpStatus.OK,
-      pageIndex: skip,
-      pageSize: limit,
+      pageIndex: paginationDto.skip,
+      pageSize: limit ?? DEFAULT_PAGE_SIZE,
       totalItems: total,
     };
   }
