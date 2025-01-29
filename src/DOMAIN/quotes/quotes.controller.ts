@@ -34,9 +34,9 @@ export class QuotesController {
     return this.quotesService.remove(+id);
   }
 
-  @Post('bulk')
-  createMany(@Body() createQuotes: CreateQuoteDto[]) {
-    return this.quotesService.createMany(createQuotes);
-  }
+  // @Post('bulk')
+  // createMany(@Body() createQuotes: CreateQuoteDto[]) {
+  //   return this.quotesService.createMany(createQuotes);
+  // }
 
 }

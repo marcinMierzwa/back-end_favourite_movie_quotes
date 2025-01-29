@@ -9,19 +9,22 @@ import { Types } from "mongoose";
 export class Quote extends Document {
 
     @Prop()
-    dialog: string
+    dialog: string;
     
     @Prop()
-    movie: string
+    movie: string;
 
     @Prop()
-    character: string
+    character: string;
 
     @Prop()
-    movieId: string
+    movieId: string;
 
     @Prop()
-    characterId: string
+    characterId: string;
+
+    @Prop()
+    backgroundUrl: string;
 
 
     @Prop({ type: [{ type: Types.ObjectId, ref: 'User' }], default: [] })

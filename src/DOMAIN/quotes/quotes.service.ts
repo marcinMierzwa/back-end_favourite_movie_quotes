@@ -41,11 +41,11 @@ export class QuotesService {
   remove(id: number) {
     return `This action removes a #${id} quote`;
   }
-  async createMany(createQuoteDtos: CreateQuoteDto[]) {
-    const createQuotes = await this.quoteModel.insertMany(createQuoteDtos);
-    return{
-      createQuotes,
-      length: createQuotes.length
-    }
-  }
+  // async createMany(createQuoteDtos: CreateQuoteDto[]) {
+  //   const createQuotes = await this.quoteModel.insertMany(createQuoteDtos);
+  //   return{
+  //     createQuotes,
+  //     length: createQuotes.length
+  //   }
+  // }
 }

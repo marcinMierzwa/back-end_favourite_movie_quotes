@@ -17,6 +17,9 @@ export class CreateQuoteDto {
   @IsString()
   characterId: string;
 
+  @IsString()
+  backgroundUrl: string;
+
 
   @IsOptional()
   @IsArray()
