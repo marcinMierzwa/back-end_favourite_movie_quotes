@@ -2,7 +2,8 @@ import { Controller, Get, Post, Body, Patch, Param, Delete, Query } from '@nestj
 import { QuotesService } from './quotes.service';
 import { CreateQuoteDto } from './dto/create-quote.dto';
 import { UpdateQuoteDto } from './dto/update-quote.dto';
-import { PaginationDto } from 'src/DTO/pagination.dto';
+import { GetQuotesDto } from 'src/DTO/get-quotes.dto';
+import { log } from 'console';
 
 @Controller('quotes')
 export class QuotesController {
@@ -14,8 +15,8 @@ export class QuotesController {
   }
 
   @Get()
-  findAll(@Query() paginationDto: PaginationDto) {
-    return this.quotesService.findAll(paginationDto);
+  findAll(@Query() getQuotesDto: GetQuotesDto) {    
+    return this.quotesService.findAll(getQuotesDto);
   }
 
   @Get(':id')
