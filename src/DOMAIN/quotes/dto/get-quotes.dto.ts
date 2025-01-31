@@ -1,5 +1,5 @@
 import { Transform } from "class-transformer";
-import { IsInt, IsOptional, IsString, min, MinLength } from "class-validator";
+import { IsInt, IsOptional, IsString, MinLength } from "class-validator";
 
 export class GetQuotesDto {
     @IsInt()

@@ -4,7 +4,7 @@ import { UpdateQuoteDto } from './dto/update-quote.dto';
 import { InjectModel } from '@nestjs/mongoose';
 import { Quote } from './schema/quote.schema';
 import { Model } from 'mongoose';
-import { GetQuotesDto } from 'src/DTO/get-quotes.dto';
+import { GetQuotesDto } from 'src/Domain/quotes/dto/get-quotes.dto';
 
 @Injectable()
 export class QuotesService {

@@ -2,8 +2,7 @@ import { Controller, Get, Post, Body, Patch, Param, Delete, Query } from '@nestj
 import { QuotesService } from './quotes.service';
 import { CreateQuoteDto } from './dto/create-quote.dto';
 import { UpdateQuoteDto } from './dto/update-quote.dto';
-import { GetQuotesDto } from 'src/DTO/get-quotes.dto';
-import { log } from 'console';
+import { GetQuotesDto } from 'src/Domain/quotes/dto/get-quotes.dto';
 
 @Controller('quotes')
 export class QuotesController {
