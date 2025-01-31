@@ -6,11 +6,18 @@ import { MongooseModule } from '@nestjs/mongoose';
   imports: [
     MongooseModule.forRootAsync({
       imports: [ConfigModule],
-      useFactory: async (config) => ({
-        uri: config.get('database.connnectionString'),
-      }),
+      useFactory: async (configService: ConfigService) => {
+        const connectionString = configService.get<string>('DATASOURCE_DATABASE_URL');
+          if (!connectionString) {
+            throw new Error('DATASOURCE_DATABASE_URL is not defined in .env file');
+        }
+        return {
+          uri: connectionString
+        }
+      },
       inject: [ConfigService],
     }),
   ],
+  exports: [MongooseModule],
 })
 export class DatabaseModule {}
