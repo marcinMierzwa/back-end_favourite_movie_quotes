@@ -1,10 +1,9 @@
-import { HttpStatus, Injectable } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { CreateQuoteDto } from './dto/create-quote.dto';
 import { UpdateQuoteDto } from './dto/update-quote.dto';
 import { InjectModel } from '@nestjs/mongoose';
 import { Quote } from './schema/quote.schema';
 import { Model } from 'mongoose';
-import { DEFAULT_PAGE_SIZE } from 'src/UTIL/common.constans';
 import { GetQuotesDto } from 'src/DTO/get-quotes.dto';
 
 @Injectable()
@@ -32,7 +31,7 @@ console.log('Skip:', skip, 'Limit:', limit);
       data: quotes,
       message: message,
       pageIndex: getQuotesDto.skip,
-      pageSize: limit ?? DEFAULT_PAGE_SIZE,
+      pageSize: limit ,
       totalItems: total,
     };
   }
