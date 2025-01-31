@@ -1,14 +1,14 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
+import { NestExpressApplication } from '@nestjs/platform-express';
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
+  const app = await NestFactory.create<NestExpressApplication>(AppModule);
   app.enableCors({
-    origin: ['http://localhost:4200', 'https://vercel-angular-test-rosy.vercel.app'],
+    origin: ['http://localhost:4200'],
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
     credentials: true,
   });
 await app.listen(process.env.PORT ?? 3000);
-  console.log(`My server is running on port ${process.env.DATASOURCE_PORT}`);
 }
 bootstrap();
